@@ -15,6 +15,11 @@ class CreatePesquisasTable extends Migration
     {
         Schema::create('pesquisas', function (Blueprint $table) {
             $table->id();
+            $table->integer('usuario_id')->unsigned()->nullable();
+            $table->string('nome')->nullable();
+            $table->text('descricao')->nullable();
+            $table->integer('tipo_pesquisa')->nullable();
+            $table->tinyInteger('status_pesquisa')->default(0);
             $table->timestamps();
         });
     }
